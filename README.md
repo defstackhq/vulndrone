@@ -1,3 +1,4 @@
+![vulndrone](logo.svg)
 # Vulndrone lab
 
 A local ground control lab for a simulated drone fleet, built for practicing web and api
