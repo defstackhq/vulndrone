@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="48" fill="#0a0d12"/>
+
+  <g stroke="#1e2530" stroke-width="1">
+    <line x1="0" y1="128" x2="512" y2="128"/>
+    <line x1="0" y1="384" x2="512" y2="384"/>
+    <line x1="128" y1="0" x2="128" y2="512"/>
+    <line x1="384" y1="0" x2="384" y2="512"/>
+  </g>
+
+  <g stroke="#35c9c0" stroke-width="6" stroke-linecap="round">
+    <line x1="176" y1="176" x2="256" y2="256"/>
+    <line x1="336" y1="176" x2="256" y2="256"/>
+    <line x1="176" y1="336" x2="256" y2="256"/>
+    <line x1="336" y1="336" x2="256" y2="256"/>
+  </g>
+
+  <circle cx="176" cy="176" r="46" fill="none" stroke="#35c9c0" stroke-width="7"/>
+  <circle cx="336" cy="176" r="46" fill="none" stroke="#35c9c0" stroke-width="7"/>
+  <circle cx="176" cy="336" r="46" fill="none" stroke="#35c9c0" stroke-width="7"/>
+  <circle cx="336" cy="336" r="46" fill="none" stroke="#35c9c0" stroke-width="7"/>
+
+  <rect x="226" y="226" width="60" height="60" rx="10" fill="#12161d" stroke="#35c9c0" stroke-width="6"/>
+
+  <circle cx="256" cy="256" r="10" fill="#e2555a"/>
+
+  <path d="M256 176 L256 130 M256 130 L244 146 M256 130 L268 146" stroke="#e8a33d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
