@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fleet Ops Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="login-view" class="login-screen">
+    <div class="login-card">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <h1>Fleet Ops Console</h1>
+      </div>
+      <p class="login-sub">Sign in to access the operations dashboard.</p>
+      <label>username</label>
+      <input id="login-user" type="text" autocomplete="off">
+      <label>password</label>
+      <input id="login-pass" type="password" autocomplete="off">
+      <button id="login-btn">Sign in</button>
+      <pre id="login-error"></pre>
+    </div>
+    <div class="notice-card">
+      <span class="card-tag">ops bulletin</span>
+      <p id="notice-text">loading</p>
+    </div>
+  </div>
+
+  <div id="dashboard-view" class="hidden">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <h1>Fleet Ops Console</h1>
+      </div>
+      <div class="topbar-right">
+        <span id="role-badge" class="pill pill-muted">not signed in</span>
+        <span id="conn-badge" class="pill pill-muted">checking link</span>
+        <button id="logout-btn" class="btn-ghost">Sign out</button>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="row">
+        <div class="card card-wide">
+          <div class="card-head">
+            <h2>Live telemetry</h2>
+            <span class="card-tag">polling every 2s</span>
+          </div>
+          <pre id="telemetry">loading</pre>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h2>Service status</h2>
+          </div>
+          <pre id="status">loading</pre>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="card">
+          <div class="card-head">
+            <h2>Flight commands</h2>
+          </div>
+          <div class="row-inline">
+            <button id="arm-btn">Arm</button>
+            <button id="disarm-btn">Disarm</button>
+          </div>
+          <div class="row-inline">
+            <input id="altitude-input" type="number" value="10" placeholder="altitude in meters">
+            <button id="takeoff-btn">Takeoff</button>
+          </div>
+          <pre id="command-result"></pre>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Mission plans</h2>
+          </div>
+          <button id="my-missions-btn">My missions</button>
+          <pre id="my-missions"></pre>
+          <div class="row-inline">
+            <label>view mission id</label>
+            <input id="mission-id-input" type="text" value="1">
+            <button id="mission-lookup-btn">Load</button>
+          </div>
+          <pre id="mission-lookup"></pre>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="card">
+          <div class="card-head">
+            <h2>Telemetry webhook export</h2>
+          </div>
+          <div class="row-inline">
+            <input id="webhook-input" type="text" placeholder="https://your-endpoint.example/hook">
+            <button id="webhook-btn">Send export</button>
+          </div>
+          <pre id="webhook-result"></pre>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Video feed</h2>
+          </div>
+          <button id="stream-btn">Get stream url</button>
+          <pre id="stream-result"></pre>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="card">
+          <div class="card-head">
+            <h2>Flight logs</h2>
+            <span class="card-tag">restricted</span>
+          </div>
+          <div class="row-inline">
+            <input id="log-input" type="text" value="flight_2026_06_01.log">
+            <button id="log-btn">Load log</button>
+          </div>
+          <pre id="log-view"></pre>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Firmware staging</h2>
+            <span class="card-tag">restricted</span>
+          </div>
+          <div class="row-inline">
+            <input id="firmware-input" type="file">
+            <button id="firmware-upload-btn">Upload</button>
+          </div>
+          <pre id="firmware-result"></pre>
+          <button id="firmware-list-btn" class="btn-ghost">List staged files</button>
+          <pre id="firmware-list"></pre>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="card">
+          <div class="card-head">
+            <h2>Fleet admin</h2>
+            <span class="card-tag">restricted</span>
+          </div>
+          <button id="admin-reset-btn" class="btn-danger">Reset fleet</button>
+          <pre id="admin-result"></pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+services:
+  companion-api:
+    build: ./companion-api
+    container_name: vulndrone-companion-api
+    environment:
+      - SITL_HOST=sitl
+      - SITL_PORT=14550
+    ports:
+      - "8000:8000"
+    networks:
+      - dronenet
+
+  sitl:
+    build: ./sitl
+    container_name: vulndrone-sitl
+    depends_on:
+      - companion-api
+    networks:
+      - dronenet
+
+  dashboard:
+    build: ./dashboard
+    container_name: vulndrone-dashboard
+    depends_on:
+      - companion-api
+    ports:
+      - "3000:80"
+    networks:
+      - dronenet
+
+networks:
+  dronenet:
+    driver: bridge
