@@ -17,7 +17,7 @@ buttons.
 ## Running it
 
 ```
-unzip vulndrone.zip
+clone/download repo
 cd vulndrone
 docker compose up --build
 ```
